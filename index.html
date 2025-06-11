@@ -302,7 +302,8 @@ Amazon Linux version 2017.09 is available.
 
                 // random style on page load
                 let display_text = ''
-                switch (Math.round(Math.random() * 2 + 1)) {
+                // use uniform distribution for style choice
+                switch (Math.floor(Math.random() * 3) + 1) {
                     case 1:
                         styleDefault();
                         display_text = 'Style Block'
@@ -315,9 +316,9 @@ Amazon Linux version 2017.09 is available.
                         styleSnow();
                         display_text = 'Style Snow'
                         break;
-                    default:
-                        styleSpace();
-                        display_text = 'Style Block'
+                        default:
+                            styleSpace();
+                            display_text = 'Style Space'
                 }
                 $('#selstyle').text(display_text);
 
